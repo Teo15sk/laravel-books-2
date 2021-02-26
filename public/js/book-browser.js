@@ -63,7 +63,7 @@ function BookList(props) {
       nr_loaded = _useState2$.nr_loaded,
       setDataState = _useState2[1];
 
-  var url = '/api/books'; // change this if necessary
+  var url = "/api/books"; // change this if necessary
 
   var loadData = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -81,7 +81,7 @@ function BookList(props) {
                 loading: true
               });
               _context.next = 4;
-              return fetch(url + '?category=' + (props.category ? props.category.id : '') + '&offset=' + nr_loaded);
+              return fetch(url + "?category=" + (props.category ? props.category.id : "") + "&offset=" + nr_loaded);
 
             case 4:
               response = _context.sent;
@@ -93,7 +93,7 @@ function BookList(props) {
               setDataState({
                 loading: false,
                 loaded: true,
-                data: data.concat(new_data),
+                data: new_data,
                 nr_loaded: nr_loaded + data.length
               });
 
@@ -117,7 +117,7 @@ function BookList(props) {
     loadData();
   }, [props.category]);
   console.log(data);
-  var content = '';
+  var content = "";
 
   if (loaded) {
     content = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
@@ -132,7 +132,7 @@ function BookList(props) {
             className: "list-book__image",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
               src: book.image,
-              alt: book.title + ' cover'
+              alt: book.title + " cover"
             })
           })]
         }, book.id);
@@ -148,7 +148,7 @@ function BookList(props) {
         className: "loader",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {})]
       }), "Loading"]
-    }) : '', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    }) : "", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "book-list__more",
       onClick: loadData,
       children: "Load more"

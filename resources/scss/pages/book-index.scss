@@ -1,0 +1,17 @@
+.book-index {
+    display: flex;
+    flex-flow: row wrap;
+    > * {
+        width: 20%;
+    }
+    &__pagination {
+        ul {
+            display: flex;
+            flex-direction: row;
+            li {
+                list-style: none;
+                margin-right: 0.5em;
+            }
+        }
+    }
+}
