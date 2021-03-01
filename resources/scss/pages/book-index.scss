@@ -10,8 +10,69 @@
             flex-direction: row;
             li {
                 list-style: none;
-                margin-right: 0.5em;
+                margin-right: 1em;
+                a {
+                    text-decoration: none;
+                    color: black;
+                }
+                a:hover {
+                    color: darkgrey;
+                }
             }
         }
+    }
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 0.5em;
+    &__img {
+        margin-right: 0.5em;
+        width: 14em;
+    }
+    &__author {
+        font-weight: 300;
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        a:hover {
+            color: orange;
+        }
+    }
+    &__title {
+        font-size: 1.1em;
+    }
+}
+
+.author-book-index {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.author-bio {
+    width: 50%;
+}
+
+.author-book {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    margin-left: 0.5em;
+    margin-bottom: 0.5em;
+    &__img {
+        margin-right: 0.5em;
+        width: 5em;
+        margin-bottom: 1em;
+    }
+    &__title {
+        font-size: 0.9em;
+        width: 10em;
     }
 }

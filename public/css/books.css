@@ -99,7 +99,68 @@ header {
 }
 .book-index__pagination ul li {
   list-style: none;
+  margin-right: 1em;
+}
+.book-index__pagination ul li a {
+  text-decoration: none;
+  color: black;
+}
+.book-index__pagination ul li a:hover {
+  color: darkgrey;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+.book__img {
   margin-right: 0.5em;
+  width: 14em;
+}
+.book__author {
+  font-weight: 300;
+}
+.book__author a {
+  text-decoration: none;
+  color: black;
+}
+.book__author a:hover {
+  color: orange;
+}
+.book__title {
+  font-size: 1.1em;
+}
+
+.author-book-index {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.author-bio {
+  width: 50%;
+}
+
+.author-book {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  margin-left: 0.5em;
+  margin-bottom: 0.5em;
+}
+.author-book__img {
+  margin-right: 0.5em;
+  width: 5em;
+  margin-bottom: 1em;
+}
+.author-book__title {
+  font-size: 0.9em;
+  width: 10em;
 }
 
 /*# sourceMappingURL=books.css.map*/
