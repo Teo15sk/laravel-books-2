@@ -1,5 +1,5 @@
-const mix = require('laravel-mix');
-require('dotenv').config();
+const mix = require("laravel-mix");
+require("dotenv").config();
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -12,26 +12,31 @@ require('dotenv').config();
  */
 
 mix.options({
-    processCssUrls: false
+    processCssUrls: false,
 });
 
 if (!mix.inProduction()) {
     mix.webpackConfig({
-        devtool: 'source-map'
-    })
-    .sourceMaps()
+        devtool: "source-map",
+    }).sourceMaps();
 }
 
-mix.sass('resources/scss/books.scss', 'public/css');
-mix.js('resources/js/book-browser/index.jsx', 'public/js/book-browser.js').react();
+mix.sass("resources/scss/books.scss", "public/css");
+mix.js(
+    "resources/js/book-browser/index.jsx",
+    "public/js/book-browser.js"
+).react();
+mix.js("resources/js/homepage/index.jsx", "public/js/homepage.js").react();
+mix.js("resources/js/BookDetail/index.jsx", "public/js/book-detail.js").react();
+mix.js("resources/js/auth/index.jsx", "public/js/auth.js").react();
 
 mix.browserSync({
-        host: 'localhost',
-        port: 3000,
-        proxy: {
-            target: process.env.APP_URL // Yay! Using APP_URL from the .env file!
-        }
-    });
+    host: "localhost",
+    port: 3000,
+    proxy: {
+        target: process.env.APP_URL, // Yay! Using APP_URL from the .env file!
+    },
+});
 
 // add versioning
 mix.version();

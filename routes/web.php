@@ -17,5 +17,16 @@ Route::get('/', 'IndexController@index');
 
 Route::get('/books', 'BookController@index');
 
+Route::get('/home/login', 'IndexController@home');
+Route::get('/home', 'IndexController@home');
+
 Route::get('/authors', 'AuthorController@index');
 Route::get('/authors/{id}', 'AuthorController@show');
+
+Route::view('/book/{book_id}/{path?}', 'book/detail')->where(['book_id' => '^\d+$', 'path' => '.*']);
+
+// display the view auth/react when user comes to /login with GET
+Route::view('/login', 'auth/react')->name('login');
+
+// display the view auth/react when user comes to /register with GET
+Route::view('/register', 'auth/react')->name('register');
